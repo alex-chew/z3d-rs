@@ -1,0 +1,30 @@
+[package]
+name = "z3d"
+version = "0.1.0"
+authors = ["Alex Chew <alex@alexchew.net>"]
+edition = "2018"
+description = "Z3 DSL interface for Rust"
+homepage = "https://github.com/alex-chew/z3d-rs"
+repository = "https://github.com/alex-chew/z3d-rs"
+readme = "../README.md"
+license = "MIT"
+keywords = ["Z3", "SMT", "satisfiability", "solver"]
+categories = ["api-bindings"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "1.0"
+quote = "1.0"
+z3 = "0.4.0"
+
+[dependencies.syn]
+version = "1.0"
+features = [
+  "extra-traits",
+  "full",
+]
+
+[dev-dependencies]
+assert_matches = "1.3"

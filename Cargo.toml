@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+  "z3d",
+  "z3d-examples",
+]

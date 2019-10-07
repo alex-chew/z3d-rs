@@ -1,0 +1,10 @@
+[package]
+name = "z3d-examples"
+version = "0.1.0"
+authors = ["Alex Chew <alex@alexchew.net>"]
+edition = "2018"
+
+[dependencies]
+itertools = "0.8.0"
+z3 = "0.4.0"
+z3d = { path = "../z3d" }
