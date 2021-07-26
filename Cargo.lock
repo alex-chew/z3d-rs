@@ -369,31 +369,14 @@ checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
 
 [[package]]
 name = "z3"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fe5e9b2a58f7914e3109e7138c42a1718e6857a3bbba0588c6ad1c30d6d4fc5f"
-dependencies = [
- "lazy_static",
- "log",
- "z3-sys 0.5.0",
-]
-
-[[package]]
-name = "z3"
 version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "dd59b29ef2cc4e05489fcd8773cae2c3fe2bb99fc98155886e9b2bf950ca592a"
 dependencies = [
  "lazy_static",
  "log",
- "z3-sys 0.7.0",
+ "z3-sys",
 ]
-
-[[package]]
-name = "z3-sys"
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ae57b4c31eabc2620fbf2ea3e4deac2cd8a12522ccc0ebcc29e60dff8137de31"
 
 [[package]]
 name = "z3-sys"
@@ -412,7 +395,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn",
- "z3 0.11.1",
+ "z3",
 ]
 
 [[package]]
@@ -420,6 +403,6 @@ name = "z3d-examples"
 version = "0.1.0"
 dependencies = [
  "itertools",
- "z3 0.4.0",
+ "z3",
  "z3d",
 ]
