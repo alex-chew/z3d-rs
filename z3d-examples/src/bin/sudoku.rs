@@ -185,13 +185,15 @@ fn extract_solution(solver: &Solver, cells: &Vec<Vec<ast::BV>>) -> Option<Puzzle
         return None;
     }
 
-    let model = solver.get_model();
-    let mut solution = [[0; 9]; 9];
-    for (rr, cc) in iproduct!(0..9, 0..9) {
-        let val = model.eval(&cells[rr][cc]).unwrap().as_i64().unwrap();
-        solution[rr][cc] = val.try_into().unwrap();
+    if let Some(model) = solver.get_model() {
+        let mut solution = [[0; 9]; 9];
+        for (rr, cc) in iproduct!(0..9, 0..9) {
+            let val = model.eval(&cells[rr][cc], true).unwrap().as_i64().unwrap();
+            solution[rr][cc] = val.try_into().unwrap();
+        }
+        return Some(Puzzle { values: solution });
     }
-    Some(Puzzle { values: solution })
+    None
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
